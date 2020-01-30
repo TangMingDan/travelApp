@@ -176,7 +176,13 @@ public class RemarkDelegate extends TravelDelegate {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Toast.makeText(getContext(),e.getMessage() + "错误",Toast.LENGTH_SHORT).show();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TravelLoader.stopLoading();
+                        Toast.makeText(getContext(),e.getMessage() + "错误",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override

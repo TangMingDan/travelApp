@@ -174,7 +174,7 @@ public class NineGridLayout extends ViewGroup {
             public void onClick(View v) {
                 Log.d("123456", String.valueOf(i));
                 String imgUrl = ((ClassifyImage) listData.get(i)).getUrl();
-                Toast.makeText(mContext,"被点击了 :" + i, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"被点击了 :" + i, Toast.LENGTH_SHORT).show();
 //                DialogShow.showDialog(mContext,imgUrl);
             }
         });

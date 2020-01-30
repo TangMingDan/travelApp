@@ -22,6 +22,7 @@ public class HotSpotRefreshHandler implements
     private TravelDelegate mDelegate;
     private MultipleRecyclerAdapter mAdapter = null;
     private String refreshUrl = null;
+    private int pageSize = 5;
 
     public HotSpotRefreshHandler(SwipeRefreshLayout refresh_layout, RecyclerView recyclerview,
                                  TravelDelegate delegate) {
@@ -60,16 +61,20 @@ public class HotSpotRefreshHandler implements
 
     @Override
     public void onLoadMoreRequested() {
-        RestClient.builder()
-                .url("remark/findRemarkByRand")
-                .success(new ISuccess() {
-                    @Override
-                    public void onSuccess(String response) {
-                        mAdapter.addData(mDataConverter.setJsonData(response).convert());
-                        mAdapter.loadMoreComplete();
-                    }
-                })
-                .bulid()
-                .get();
+        if(mAdapter.getData().size() < pageSize){
+            mAdapter.loadMoreEnd(true);
+        }else {
+            RestClient.builder()
+                    .url("remark/findRemarkByRand")
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            mAdapter.addData(mDataConverter.setJsonData(response).convert());
+                            mAdapter.loadMoreComplete();
+                        }
+                    })
+                    .bulid()
+                    .get();
+        }
     }
 }
