@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:background="@color/colorGray"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:id="@+id/deimg_head"
+            android:layout_width="50dp"
+            android:layout_height="43dp"
+            />
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tv_hot_spot_name"
+                android:text="小明"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/tv_hot_spot_title"
+                    android:text="今天天气真好啊"
+                    android:paddingRight="20dp"
+                    android:layout_width="0dp"
+                    android:textSize="18sp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40">
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:text="{fa-location-arrow}"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:id="@+id/tv_hot_spot_scenery_name"
+                    android:layout_marginTop="5dp"
+                    android:text="江津四面山"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <TextView
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:id="@+id/tv_hot_spot_content"
+                android:layout_marginTop="5dp"
+                android:text="今天天气真好，好开心！！！！！！！！！！！！！！！！！"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.travelapp.core.ui.gridLayout.NineGridLayout
+                android:layout_marginTop="8dp"
+                android:id="@+id/iv_ngrid_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                />
+
+            <com.example.travelapp.core.ui.gridLayout.CustomImageView
+                android:layout_marginTop="8dp"
+                android:id="@+id/iv_oneimage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
+                <TextView
+                    android:paddingTop="@dimen/dp_10"
+                    android:id="@+id/tv_hot_spot_time"
+                    android:text="3分钟前"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+

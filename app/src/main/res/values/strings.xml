@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">travelApp</string>
+    <string name="not_set">未设置</string>
+    <string name="about_app">App简介</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="sindex_earch">搜索</string>
+    <string name="travel_note">旅行记事</string>
+    <string name="all_note">全部记事</string>
+    <string name="like_to_play">想去玩</string>
+    <string name="played">已玩过</string>
+    <string name="app_setting">设置</string>
+    <string name="sign_in">登录</string>
+    <string name="user_num">账号</string>
+    <string name="user_password">密码</string>
+    <string name="sign_in_msg">还没有账户了？现在注册</string>
+    <string name="sign_up">注册</string>
+    <string name="user_name">姓名</string>
+    <string name="user_email">邮箱</string>
+    <string name="user_phone">手机号码</string>
+    <string name="user_password_once">重复密码</string>
+    <string name="sign_up_msg">已经注册了？请登录</string>
+    <string name="sort">分类</string>
+    <string name="hint_input_name">请输入您的姓名</string>
+    <string name="cancel">取消</string>
+    <string name="submit">提交</string>
+    <string name="cmera">拍照</string>
+    <string name="local">本地</string>
+    <string name="help_num">紧急联系人电话</string>
+    <string name="input_num">请输入电话号码</string>
+    <string name="choose_attractions">请选择景点:</string>
+    <string name="choose_time">请选择时间:</string>
+    <string name="note_detial_title">记录美好旅行</string>
+    <string name="title">标题</string>
+    <string name="user_birth">生日</string>
+</resources>

@@ -1,0 +1,122 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.travelapp"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "0a1199c2d9e28a352039fbc0", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+packagingOptions {
+    doNotStrip '*/mips/*.so'
+    doNotStrip '*/mips64/*.so'
+}
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //android support
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    //圆形图片
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    //字体图标
+    api 'com.joanzapata.iconify:android-iconify:2.2.2'
+    api 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+
+    //Fragment依赖
+    api 'me.yokeyword:fragmentationx:1.0.1'
+    api 'me.yokeyword:fragmentationx-swipeback:1.0.1'
+
+    //ButterKnife依赖
+    api 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    //网络依赖
+    api 'com.squareup.okio:okio:1.14.1'
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.4.0' //转化器
+
+    //load依赖
+    api 'com.wang.avi:library:2.1.3'
+
+    //banner
+    api 'com.bigkoo:convenientbanner:2.1.5'//地址变小写了，额。。。
+    api 'androidx.recyclerview:recyclerview:1.0.0+'
+
+    //json依赖
+    api 'com.alibaba:fastjson:1.1.71.android'
+
+    //RecyclerView依赖
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+    //RecyclerView分割线
+    api 'com.choices.divider:RecyclerView_Divider:1.0.0'
+    //图片处理
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    api 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+
+
+    //Google AutoValue
+    api "com.google.auto.value:auto-value-annotations:1.6.6"
+    annotationProcessor "com.google.auto.value:auto-value:1.6.6"
+
+    //沉浸式状态栏
+    api ('com.github.niorgai:StatusBarCompat:2.3.3', {
+        exclude group: 'androidx.appcompat:appcompat'
+        exclude group: 'com.google.android.material:material'
+    })
+
+    //裁剪图片
+    api 'com.github.yalantis:ucrop:2.2.4-native'
+
+    //动态权限
+    //动态权限处理
+    api "org.permissionsdispatcher:permissionsdispatcher:4.5.0"
+    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0"
+
+    //工具包
+    api 'com.blankj:utilcodex:1.25.9'
+
+    //极光推送
+    api 'cn.jiguang.sdk:jpush:3.1.5'
+    api 'cn.jiguang.sdk:jcore:1.2.3'
+
+    //图片加载框架
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation 'com.lzy.widget:imagepicker:0.6.1'
+}

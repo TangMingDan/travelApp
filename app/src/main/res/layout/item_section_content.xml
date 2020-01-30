@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:layout_margin="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="100dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
