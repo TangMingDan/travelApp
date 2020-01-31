@@ -28,7 +28,7 @@ public class NoteDelegate extends TravelDelegate {
     @OnClick(R2.id.fltbtn_add_note)
     void onClickAddNote(){
         WriteDetialNoteDelegate writeDetialNoteDelegate = WriteDetialNoteDelegate.newInstance();
-        getParentDelegate().start(writeDetialNoteDelegate);
+        getSupportDelegate().start(writeDetialNoteDelegate);
     }
 
 

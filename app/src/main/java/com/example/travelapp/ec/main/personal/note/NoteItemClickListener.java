@@ -52,7 +52,7 @@ public class NoteItemClickListener extends SimpleClickListener {
                         bean.getField(MultipleFields.NUM),
                         bean.getField(MultipleFields.ITEM_TYPE),
                         bean.getField(MultipleFields.CONTENT));
-        mDelegate.start(detialNoteDelegate);
+        mDelegate.getSupportDelegate().start(detialNoteDelegate);
     }
 
     @Override
