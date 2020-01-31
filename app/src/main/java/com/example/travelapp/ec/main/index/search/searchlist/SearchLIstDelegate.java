@@ -49,7 +49,11 @@ public class SearchLIstDelegate extends TravelDelegate
 
     @OnClick(R2.id.tv_top_search)
     void onSearch() {
-        searchData();
+        if(editText.getText().toString() == null || editText.getText().toString().equals("")){
+            Toast.makeText(getContext(),"输入内容不能为空",Toast.LENGTH_SHORT).show();
+        }else {
+            searchData();
+        }
     }
 
     @OnClick(R2.id.icon_top_search_back)
