@@ -20,10 +20,12 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.example.travelapp.R;
 import com.example.travelapp.core.app.Travel;
+import com.example.travelapp.core.app.UserInfoType;
 import com.example.travelapp.core.delegates.TravelDelegate;
 import com.example.travelapp.core.utils.callback.CallbackManager;
 import com.example.travelapp.core.utils.callback.CallbackType;
 import com.example.travelapp.core.utils.callback.IGlobalCallback;
+import com.example.travelapp.core.utils.storage.TravelPreference;
 import com.example.travelapp.ec.main.map.TravleMap;
 
 import java.util.List;
@@ -126,15 +128,15 @@ public class HelpHandler implements View.OnClickListener {
         switch ((Integer) tag) {
             case 1:
                 currentPosition.append("出现紧急危险情况");
-                num = "18384879785";
+                num =  TravelPreference.getCustomAppProfile(UserInfoType.SOS_PHONE.name());;
                 break;
             case 2:
                 currentPosition.append("需要医疗救护人员");
-                num = "13170343199";
+                num = TravelPreference.getCustomAppProfile(UserInfoType.HELP_PHONE.name());
                 break;
             case 3:
                 currentPosition.append("是我当前的地址，请马上联系我");
-                num = "13170343199";
+                num = TravelPreference.getCustomAppProfile(UserInfoType.FRIEND_PHONE.name());
                 break;
             default:
                 break;

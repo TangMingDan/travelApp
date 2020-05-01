@@ -8,7 +8,9 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.example.travelapp.R;
+import com.example.travelapp.core.app.UserInfoType;
 import com.example.travelapp.core.delegates.TravelDelegate;
+import com.example.travelapp.core.utils.storage.TravelPreference;
 import com.example.travelapp.ec.main.personal.list.ListBean;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -63,6 +65,7 @@ public class SettingClickListener extends SimpleClickListener {
 
         AppCompatButton submit = dialogView.findViewById(R.id.btn_num_submit);
         EditText userNum= dialogView.findViewById(R.id.edit_input_num_help);
+        userNum.setText(TravelPreference.getCustomAppProfile(UserInfoType.FRIEND_PHONE.name()));
         AppCompatButton cancel = dialogView.findViewById(R.id.btn_num_cancel);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +74,7 @@ public class SettingClickListener extends SimpleClickListener {
                 TextView textView = view.findViewById(R.id.tv_arrow_value);
                 textView.setText(userNum.getText());
                 //本地保存textView.getText()
+                TravelPreference.addCustomAppProfile(UserInfoType.FRIEND_PHONE.name(),userNum.getText().toString());
                 dialog.cancel();
             }
         });

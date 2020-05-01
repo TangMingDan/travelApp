@@ -27,7 +27,7 @@ public class CollectItemClickListener extends SimpleClickListener {
         final MultipleItemBean bean = (MultipleItemBean) baseQuickAdapter.getData().get(position);
         final int goodsId = bean.getField(MultipleFields.ID);
         final SceneryDetialDelegate detialDelegate = SceneryDetialDelegate.create(goodsId);
-        delegate.start(detialDelegate);
+        delegate.getSupportDelegate().start(detialDelegate);
     }
 
     @Override

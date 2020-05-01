@@ -30,7 +30,7 @@ public class SectionDataConverter {
             final JSONArray sceneryImgs = data.getJSONArray("sceneryImgs");
             //商品内容循环
             int scenerySize = sceneryImgs.size();
-            for (int j = 0; j < scenerySize; j++) {
+            for (int j = 0; j < scenerySize / 2; j++) {
                 final JSONObject contentItem = sceneryImgs.getJSONObject(j);
 
                 final int imgId = contentItem.getInteger("imgId");

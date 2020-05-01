@@ -26,8 +26,9 @@ public class AboutDelegate extends TravelDelegate {
 
     @Override
     public void onBindView(@NonNull Bundle savedInstanceState, View rootView) {
+        mTextView.setText("TravelAPP，version1.0,完成时间2020年1月，试运行");
         RestClient.builder()
-                .url("about.json")
+                .url("/about.json")
                 .loader(getContext())
                 .success(new ISuccess() {
                     @Override

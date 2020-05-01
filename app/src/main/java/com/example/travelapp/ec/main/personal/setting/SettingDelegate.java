@@ -37,7 +37,7 @@ public class SettingDelegate extends TravelDelegate {
                 .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(1)
                 .setText("设置紧急联系人")
-                .setValue("尚未设置")
+                .setValue("")
                 .build();
         final ListBean push = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_SWITCH)

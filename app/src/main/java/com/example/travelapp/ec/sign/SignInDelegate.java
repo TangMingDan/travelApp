@@ -9,11 +9,13 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.travelapp.R;
 import com.example.travelapp.R2;
+import com.example.travelapp.core.app.UserInfoType;
 import com.example.travelapp.core.delegates.TravelDelegate;
 import com.example.travelapp.core.net.RestClient;
 import com.example.travelapp.core.net.callback.IError;
 import com.example.travelapp.core.net.callback.IFailure;
 import com.example.travelapp.core.net.callback.ISuccess;
+import com.example.travelapp.core.utils.storage.TravelPreference;
 import com.example.travelapp.ec.info.User;
 import com.example.travelapp.ec.main.EcBottomDelegate;
 import com.google.android.material.textfield.TextInputEditText;
@@ -124,7 +126,18 @@ public class SignInDelegate extends TravelDelegate {
 
     @Override
     public void onBindView(@NonNull Bundle savedInstanceState, View rootView) {
-
+        String sosPhone = TravelPreference.getCustomAppProfile(UserInfoType.SOS_PHONE.name());
+        String helpPhone = TravelPreference.getCustomAppProfile(UserInfoType.HELP_PHONE.name());
+        String friendPhone = TravelPreference.getCustomAppProfile(UserInfoType.FRIEND_PHONE.name());
+        if (sosPhone == null || sosPhone.equals(""));{
+            TravelPreference.addCustomAppProfile(UserInfoType.SOS_PHONE.name(),"1101");
+        }
+        if(helpPhone == null || helpPhone.equals("")){
+            TravelPreference.addCustomAppProfile(UserInfoType.HELP_PHONE.name(),"1201");
+        }
+        if(friendPhone == null || friendPhone.equals("")){
+            TravelPreference.addCustomAppProfile(UserInfoType.FRIEND_PHONE.name(),"12345678911");
+        }
     }
 
 }

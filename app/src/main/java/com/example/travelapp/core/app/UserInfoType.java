@@ -8,5 +8,8 @@ public enum UserInfoType {
     USER_SEX,
     USER_ID,
     USER_BIRTHDAY,
-    USER_PASSWORD
+    USER_PASSWORD,
+    SOS_PHONE,
+    HELP_PHONE,
+    FRIEND_PHONE
 }

@@ -15,6 +15,7 @@ import com.example.travelapp.core.app.Travel;
 import com.example.travelapp.core.delegates.TravelDelegate;
 import com.example.travelapp.core.ui.launcher.ILauncherListener;
 import com.example.travelapp.core.ui.launcher.OnLauncherFinishTag;
+import com.example.travelapp.core.utils.storage.TravelPreference;
 import com.example.travelapp.ec.launcher.LauncherDelegate;
 import com.example.travelapp.ec.launcher.LauncherScrollDelegate;
 import com.example.travelapp.ec.main.EcBottomDelegate;
