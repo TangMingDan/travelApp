@@ -152,7 +152,7 @@ public class HelpHandler implements View.OnClickListener {
      */
     public void callPhone() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        Uri data = Uri.parse("tel:" + "13117341623");
+        Uri data = Uri.parse("tel:" + TravelPreference.getCustomAppProfile(UserInfoType.FRIEND_PHONE.name()));
         intent.setData(data);
         mDelegate.startActivity(intent);
     }
